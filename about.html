@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>About Us | Cognitive Liberty Foundation</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        nav {
+            background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+            padding: 16px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            margin: 0 16px;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        main {
+            max-width: 700px;
+            margin: 90px auto 0 auto;
+            background: rgba(44,83,100,0.92);
+            border-radius: 24px;
+            padding: 40px 36px 36px 36px;
+            box-shadow: 0 8px 32px rgba(24,90,157,0.18);
+            animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1);
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(60px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        h2 {
+            font-size: 1.4rem;
+            margin: 32px 0 12px 0;
+            font-weight: 700;
+            color: #43cea2;
+        }
+        .mission {
+            font-size: 1.15rem;
+            margin-bottom: 24px;
+            color: #b2dfdb;
+        }
+        .values-list {
+            margin: 0 0 24px 0;
+            padding-left: 18px;
+        }
+        .values-list li {
+            margin-bottom: 8px;
+            font-size: 1.08rem;
+        }
+        .team-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 16px;
+        }
+        .team-member {
+            flex: 1 1 220px;
+            background: rgba(67, 206, 162, 0.10);
+            border-radius: 14px;
+            padding: 18px 14px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(67,206,162,0.10);
+        }
+        .team-member img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid #43cea2;
+            object-fit: cover;
+        }
+        .team-member h3 {
+            margin: 8px 0 4px 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        .team-member p {
+            margin: 0;
+            font-size: 0.98rem;
+            color: #b2dfdb;
+        }
+        .social-links {
+            margin-top: 32px;
+            text-align: center;
+        }
+        .social-links a {
+            color: #43cea2;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .social-links a:hover {
+            color: #ffd700;
+        }
+        @media (max-width: 700px) {
+            main { padding: 24px 8px;}
+            h1 { font-size: 1.5rem;}
+            .team-section { flex-direction: column; gap: 14px;}
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <main>
+        <h1>About the Cognitive Liberty Foundation</h1>
+        <div class="mission">
+            Our mission is to defend and advance the fundamental right to freedom of thought, mental privacy, and self-determination in the digital age. We advocate for ethical technology, informed policy, and the protection of cognitive liberty for all.
+        </div>
+        <h2>Our Values</h2>
+        <ul class="values-list">
+            <li><strong>Freedom of Thought:</strong> Every person has the right to think freely and independently.</li>
+            <li><strong>Mental Privacy:</strong> Personal thoughts and mental data must be protected from unauthorized access or manipulation.</li>
+            <li><strong>Ethical Technology:</strong> We promote the responsible development and use of neurotechnology and AI.</li>
+            <li><strong>Education & Advocacy:</strong> Empowering the public and policymakers with knowledge and resources.</li>
+            <li><strong>Inclusivity:</strong> We believe cognitive liberty is a universal human right.</li>
+        </ul>
+        <h2>Our Team</h2>
+        <div class="team-section">
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex Rivera">
+                <h3>Alex Rivera</h3>
+                <p>Executive Director</p>
+            </div>
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Patel">
+                <h3>Priya Patel</h3>
+                <p>Policy Lead</p>
+            </div>
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Jordan Lee">
+                <h3>Jordan Lee</h3>
+                <p>Technology & Ethics</p>
+            </div>
+        </div>
+        <div class="social-links" aria-label="Social media links">
+            <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><span aria-hidden="true">🐦</span></a>
+            <a href="https://facebook.com/" target="_blank" aria-label="Facebook"><span aria-hidden="true">📘</span></a>
+            <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><span aria-hidden="true">📸</span></a>
+        </div>
+    </main>
+</body>
+</html>

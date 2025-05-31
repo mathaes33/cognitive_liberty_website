@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Cognitive Liberty Foundation</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assests/style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation bar */
+        nav {
+            background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+            padding: 16px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            margin: 0 16px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        header {
+            text-align: center;
+            padding: 100px 20px 40px 20px; /* Adjusted to accommodate nav */
+            background: linear-gradient(120deg, #43cea2 0%, #185a9d 100%);
+            animation: fadeInDown 1.2s cubic-bezier(.77,0,.18,1);
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-60px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 20px 0;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-shadow: 0 4px 24px rgba(0,0,0,0.2);
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 4px 24px #43cea2;}
+            to { text-shadow: 0 4px 48px #185a9d;}
+        }
+        h2 {
+            font-size: 2rem;
+            margin: 40px 0 20px 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0 0 0;
+            flex-wrap: wrap;
+        }
+        .cta-btn {
+            background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+            color: #fff;
+            padding: 18px 36px;
+            border: none;
+            border-radius: 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 6px 24px rgba(24,90,157,0.2);
+            transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+            text-decoration: none;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-btn:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 12px 32px rgba(67,206,162,0.25);
+            background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+        }
+        .animated-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .animated-bg span {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.25;
+            animation: float 12s infinite linear;
+            background: radial-gradient(circle, #43cea2 0%, #185a9d 100%);
+        }
+        @keyframes float {
+            0% { transform: translateY(0) scale(1);}
+            50% { transform: translateY(-60px) scale(1.2);}
+            100% { transform: translateY(0) scale(1);}
+        }
+        main {
+            max-width: 600px;
+            margin: 60px auto 0 auto;
+            background: rgba(44,83,100,0.85);
+            border-radius: 24px;
+            padding: 40px 30px 30px 30px;
+            box-shadow: 0 8px 32px rgba(24,90,157,0.18);
+            animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1);
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(60px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-top: 20px;
+        }
+        input, button, textarea {
+            font-family: inherit;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: none;
+            padding: 14px;
+            margin: 0;
+            outline: none;
+        }
+        input, textarea {
+            background: #f7f7f7;
+            color: #222;
+            transition: box-shadow 0.2s;
+        }
+        input:focus, textarea:focus {
+            box-shadow: 0 0 0 2px #43cea2;
+        }
+        button[type="submit"] {
+            background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            border: none;
+        }
+        button[type="submit"]:hover {
+            background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+            transform: scale(1.03);
+        }
+        .donate-link {
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 1.1rem;
+            color: #43cea2;
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+        .donate-link:hover {
+            color: #fff;
+            text-shadow: 0 0 8px #43cea2;
+        }
+        .success-message {
+            background: #43cea2;
+            color: #fff;
+            padding: 14px;
+            border-radius: 8px;
+            margin-top: 18px;
+            text-align: center;
+            display: none;
+            font-weight: 700;
+            animation: fadeIn 0.8s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0;}
+            to { opacity: 1;}
+        }
+
+        /* News & Updates Section */
+        #news {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 30px;
+            background: rgba(44, 83, 100, 0.85);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(24, 90, 157, 0.18);
+            animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1);
+        }
+
+        .news-item {
+            background: rgba(67, 206, 162, 0.15);
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(67, 206, 162, 0.25);
+        }
+
+        .news-item h3 {
+            margin: 0 0 10px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .news-item p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 700px) {
+            header { padding: 60px 10px 30px 10px;}
+            h1 { font-size: 2rem;}
+            main { padding: 24px 8px;}
+            .cta-buttons { gap: 16px;}
+        }
+        .header-description {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 24px auto;
+        }
+        #donate {
+            margin-top: 48px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <p class="header-description">
+            Defending your right to freedom of thought, mental privacy, and self-determination in the digital age.
+        </p>
+    <header>
+        <h1>Cognitive Liberty Foundation</h1>
+        <p class="header-description">
+            Defending your right to freedom of thought, mental privacy, and self-determination in the digital age.
+        </p>
+        <div class="cta-buttons">
+            <a href="https://www.change.org/mindmatters" target="_blank" rel="noopener" class="cta-btn" aria-label="Sign the Petition">Sign the Petition</a>
+            <a href="#signup" class="cta-btn" aria-label="Sign Up for News">Get Updates</a>
+            <a href="#donate" class="cta-btn" aria-label="Donate">Donate</a>
+        </div>
+    </header>
+    <main>
+        <section id="news">
+            <h2>News & Updates</h2>
+            <div class="news-item">
+                <h3>Latest Initiative Launched</h3>
+                <p>We are excited to announce our latest efforts in advocating for cognitive liberty.</p>
+            </div>
+            <div class="news-item">
+                <h3>Upcoming Webinar: The Future of Digital Privacy</h3>
+                <p>Join us for an exclusive discussion on how privacy laws are evolving.</p>
+            </div>
+            <!-- Add more news items as needed -->
+        </section>
+        <h2 id="signup">Stay Informed</h2>
+        <p>Sign up for news, events, and updates from the Cognitive Liberty Foundation.</p>
+        <form id="newsletter-form" autocomplete="off">
+            <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+            <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
+        <h2 id="donate">Support Our Mission</h2>
+            <div class="success-message" id="success-message">Thank you for subscribing!</div>
+        </form>
+        <        <!-- ...existing code... -->
+        <!-- Fix: Add missing < before h2 and remove duplicate donate section -->
+        <          <p>Your donation helps us protect cognitive liberty for all.</p>
+        <a href="https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID" target="_blank" rel="noopener" class="donate-link">Make a Donation &rarr;</a>
+    </main>
+    <script>
+        // Animated background bubbles
+        const bg = document.querySelector('.animated-bg');
+        for(let i=0;i<18;i++){
+            const s = document.createElement('span');
+            const size = Math.random()*80+40;
+            s.style.width = s.style.height = size+'px';
+            s.style.left = Math.random()*100+'vw';
+            s.style.top = Math.random()*100+'vh';
+            s.style.animationDuration = (8+Math.random()*8)+'s';
+            s.style.opacity = 0.12 + Math.random()*0.18;
+            bg.appendChild(s);
+        }
+
+        // Newsletter form (demo only)
+        document.getElementById('newsletter-form').addEventListener('submit', function(e){
+            e.preventDefault();
+            document.getElementById('success-message').style.display = 'block';
+            setTimeout(()=>{document.getElementById('success-message').style.display='none';}, 4000);
+            this.reset();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(link=>{
+            link.addEventListener('click', function(e){
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target){
+                    e.preventDefault();
+                    target.scrollIntoView({behavior:'smooth'});
+                }
+            });
+        });
+    </script>
+</body>
+</html>
